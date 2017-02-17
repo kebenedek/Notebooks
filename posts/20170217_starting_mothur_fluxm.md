@@ -12,4 +12,10 @@ TASK: log in to high memory flux nodes (flumx) and run mothur following the tuto
 5. copy the script to run mothur from the DenefLab repositor on GitHub: ```wget https://github.com/DenefLab/flux-tools/raw/gh-pages/scripts/mothur.batch```  
 6. using ```vi``` edit the input, output, and tempdefault locations on the text file mothur.batch  
   ```vi mothur.batch```  
+  Tempdefault signifies a location that mothur will search for file that are not in the input directory. This is a good place to leave your databases for alignment/taxonomy.
+7. press "escape" and "i" to edit lines  
+  ```set.dir(input=/scratch/duhaimem_fluxm/kbenedek/tara/mothur)```  
+  ```set.dir(output=/scratch/duhaimem_fluxm/kbenedek/tara/mothur)```  
+  
+
   
