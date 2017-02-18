@@ -17,8 +17,3 @@ TASK: log in to high memory flux nodes (flumx) and run mothur following the tuto
   ```set.dir(input=/scratch/duhaimem_fluxm/kbenedek/tara/mothur)```  
   ```set.dir(output=/scratch/duhaimem_fluxm/kbenedek/tara/mothur)```  
   ```set.dir(tempdefault=/scratch/duhaimem_fluxm/duhaimem/Database/ssu_rRNA/Mothur)```  
-8. press "escape" and type ```:wq``` to save changes and exit text file  
-
-  
-
-  
