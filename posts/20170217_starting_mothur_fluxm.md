@@ -14,7 +14,6 @@ TASK: log in to high memory flux nodes (flumx) and run mothur following the tuto
   ```vi mothur.batch```  
   Tempdefault signifies a location that mothur will search for file that are not in the input directory. This is a good place to leave your databases for alignment/taxonomy.
 7. press "escape" and "i" to edit lines  
-  ```set.dir(input=/scratch/duhaimem_fluxm/kbenedek/tara/mothur)```  
-  ```set.dir(output=/scratch/duhaimem_fluxm/kbenedek/tara/mothur)```  
-  ```set.dir(tempdefault=/scratch/duhaimem_fluxm/duhaimem/Database/ssu_rRNA/Mothur)```  
+  ```
+
 8. help    
