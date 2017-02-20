@@ -21,10 +21,13 @@ TASK: log in to high memory flux nodes (flumx) and run mothur following the tuto
 8. using ```vi``` edit the file argument, processors, reference argument, reference and taxonomy arguments, and groups  
   ```make.contigs(file=Tara.stability.file, processors=30)```  
   This file has not yet been created, but will change the file argument to a file that contains all the sample names and links to the forward and reverse reads  
+  
   ```align.seqs(fasta=current, reference=silva.seed_v123.pcr.align)```  
   This will change the reference argument to the name of the file you want to align to  
+  
   ```classify.seqs(fasta=current, count=current, reference=silva.nr_v119.pcr.v4.align, taxonomy=silva.nr_v119.tax, cutoff=60)```  
   This will change the reference and taxonomy arguments to the files you are using for your analysis. Leave this the same because we need an accurate species list to compare the newly sequenced data too.  
+  
 8. press "escape" and type ```:wq``` to save changes to text file and exit  
 9. thank you god
  
