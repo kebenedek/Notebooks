@@ -29,5 +29,5 @@ TASK: log in to high memory flux nodes (flumx) and run mothur following the tuto
   This will change the reference and taxonomy arguments to the files you are using for your analysis. Leave this the same because we need an accurate species list to compare the newly sequenced data too.  
   
 8. press "escape" and type ```:wq``` to save changes to text file and exit  
-9. thank you god
+
  
