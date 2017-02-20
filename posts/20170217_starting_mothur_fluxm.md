@@ -2,7 +2,7 @@ TASK: log in to high memory flux nodes (flumx) and run mothur following the tuto
 
 
 1. log in to flux: ```ssh -l kbenedek flux-login.arc-ts.umich.edu```  
-2. log in to high memory nodes on flux: ```cd /scratch/duhaime_fluxm/```  
+2. log in to high memory nodes on flux: ```cd /scratch/duhaimem_fluxm/```  
   This is where we do the data processing/running mothur. We will need to move our sequence files here to process them. But we don't want to save our raw data or our results here. The scratch space on the high memory nodes is deleted every 90 days if not being used.  
 3. go into personal directory ```cd kbenedek```  
 4. go into project directory tara/mothur  
@@ -14,6 +14,7 @@ TASK: log in to high memory flux nodes (flumx) and run mothur following the tuto
   ```vi mothur.batch```  
   Tempdefault signifies a location that mothur will search for file that are not in the input directory. This is a good place to leave your databases for alignment/taxonomy.
 7. press "escape" and "i" to edit lines  
-  ```
-
-8. help    
+  ```set.dir(input=/scratch/duhaimem_fluxm/kbenedek/tara/mothur)```  
+  ```set.dir(output=/scratch/duhaimem_fluxm/kbenedek/tara/mothur)```  
+  ```set.dir(tempdefault=/scratch/duhaimem_fluxm/duhaimem/Database/ssu_rRNA/Mothur)```  
+8. press "escape" and type ```:wq``` to save changes to text file and exit  
