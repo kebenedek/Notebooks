@@ -1,0 +1,10 @@
+Task: access copy of data and view PBS script to run mothur  
+
+1. log in to flux:  ```ssh -l kbenedek flux-login.arc-ts.umich.edu```  
+
+2. log in to Duhaime lab's high memory nodes on flux: ```cd /scratch/duhaimem_fluxm/```  
+
+3.  to access a zipped copy of the data: ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur/Run_186_Duhaime_data```  
+```cd kbenedek
+   cd tara
+   cd mothur```  
