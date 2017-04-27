@@ -1,4 +1,4 @@
-This process comes from a combination of referencing Michelle Berry's guthub resource [here](https://github.com/DenefLab/flux-tools/blob/gh-pages/scripts/mothur.batch) and Ruben Prop's github [here](https://github.com/rprops/Mothur_oligo_batch/blob/master/mothur.batch.general).
+This process comes from a combination of referencing Michelle Berry's github resource [here](https://github.com/DenefLab/flux-tools/blob/gh-pages/scripts/mothur.batch) and Ruben Prop's github [here](https://github.com/rprops/Mothur_oligo_batch/blob/master/mothur.batch.general).
 
 Task: access copy of data and view PBS script to run mothur  
 
