@@ -28,10 +28,10 @@ set.dir(tempdefault=/scratch/duhaimem_fluxm/duhaimem/Database/ssu_rRNA/Mothur)
 ```   
 
 #  Set processors based on the number of samples you have and whether you're using flux or fluxm
+```make.contigs(file=stability.file, processors=30) 
+summary.seqs(fasta=current)```  
 
-```make.contigs(file=stability.file, processors=30) summary.seqs(fasta=current)```  
-
-# Remove sequences with ambiguous bases and sequences that are not between 240-275 bp
+#  Remove sequences with ambiguous bases and sequences that are not between 240-275 bp
 ```screen.seqs(fasta=current, group=current, summary=current, maxambig=0, maxlength=275, minlength=240, maxhomop=8)
 summary.seqs(fasta=current)```   
 
@@ -101,7 +101,7 @@ summary.seqs(count=current)```
 
 5. to access and edit PBS script ```mothur.pbs```  
       in ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur``` type ```nano mothur.pbs```  
-      
+      ```  
 
 ####  PBS preamble
 #PBS -N Mothur.batch
