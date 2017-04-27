@@ -112,7 +112,8 @@ classify.otu(list=current, count=current, taxonomy=current, label=0.03)
 ```  
 
 
-# 5. to access and edit PBS script ```mothur.pbs``` in ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur``` type ```nano mothur.pbs```  
+# 5. to access and edit PBS script:
+```mothur.pbs``` in ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur``` type ```nano mothur.pbs```  
 
 Contents of ```mothur.pbs``` script:
 ```  
