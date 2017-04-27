@@ -6,7 +6,8 @@ Task: access copy of data and view PBS script to run mothur
 # 2. log in to Duhaime lab's high memory nodes on flux: 
 ```cd /scratch/duhaimem_fluxm/```  
 
-# 3.  to access a zipped copy of the data: ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur/Run_186_Duhaime_data```  
+# 3.  to access a zipped copy of the data: 
+```/scratch/duhaimem_fluxm/kbenedek/tara/mothur/Run_186_Duhaime_data```  
 ```
 cd kbenedek
 cd tara
@@ -15,6 +16,7 @@ cd Run_186_Duhaime_data
 ```  
 
 # 4. to access and edit ```mothur.batch```  file:
+
       in ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur```  type ```nano mothur.batch```  
 
 
