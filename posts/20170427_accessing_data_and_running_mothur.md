@@ -1,10 +1,10 @@
 Task: access copy of data and view PBS script to run mothur  
 
-1. log in to flux:  ```ssh -l kbenedek flux-login.arc-ts.umich.edu```  
+# 1. log in to flux:  ```ssh -l kbenedek flux-login.arc-ts.umich.edu```  
 
-2. log in to Duhaime lab's high memory nodes on flux: ```cd /scratch/duhaimem_fluxm/```  
+# 2. log in to Duhaime lab's high memory nodes on flux: ```cd /scratch/duhaimem_fluxm/```  
 
-3.  to access a zipped copy of the data: ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur/Run_186_Duhaime_data```  
+# 3.  to access a zipped copy of the data: ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur/Run_186_Duhaime_data```  
 ```
 cd kbenedek
 cd tara
@@ -12,7 +12,7 @@ cd mothur
 cd Run_186_Duhaime_data
 ```  
 
-4. to access and edit ```mothur.batch```  file:
+# 4. to access and edit ```mothur.batch```  file:
       in ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur```  type ```nano mothur.batch```  
 
 
@@ -28,97 +28,97 @@ set.dir(tempdefault=/nfs/vdenef-lab/Shared/Ruben/databases_taxass)
 set.dir(tempdefault=/scratch/duhaimem_fluxm/duhaimem/Database/ssu_rRNA/Mothur)
 ```   
 
-#  Set processors based on the number of samples you have and whether you're using flux or fluxm
+4. Set processors based on the number of samples you have and whether you're using flux or fluxm
 ```make.contigs(file=stability.file, processors=30, summary.seqs(fasta=current)
 ```
 
-#  Remove sequences with ambiguous bases and sequences that are not between 240-275 bp
+5. Remove sequences with ambiguous bases and sequences that are not between 240-275 bp
 ```screen.seqs(fasta=current, group=current, summary=current, maxambig=0, maxlength=275, minlength=240, maxhomop=8)
 summary.seqs(fasta=current)
 ```   
 
-# It would take forever to align every sequence, so we find just the unique ones
+6. It would take forever to align every sequence, so we find just the unique ones
 ```unique.seqs(fasta=current)
 count.seqs(name=current, group=current)
 ```   
 
-# Align sequences to the v4 region of the silva database
+7.  Align sequences to the v4 region of the silva database
 ```align.seqs(fasta=current, reference=silva.seed_v123.pcr.align)
 screen.seqs(fasta=current, count=current, start=1968, end=11550)
 summary.seqs(count=current)
 ```  
 
-# Filter sequences to remove overhangs at both ends and gaps
-# After this we rerun unique.seqs because we might have created some new redundancies from the filtering
+8. Filter sequences to remove overhangs at both ends and gaps
+9. After this we rerun unique.seqs because we might have created some new redundancies from the filtering
 ```filter.seqs(fasta=current, vertical=T, trump=.)
 unique.seqs(fasta=current, count=current)
 ```   
 
-# Precluster sequences allowing for up to 2 differences between sequences.
-# The goal of this step is to eliminate sequences with errors due to sequencing technology by merging them with very similar sequences  
+10. Precluster sequences allowing for up to 2 differences between sequences.
+11. The goal of this step is to eliminate sequences with errors due to sequencing technology by merging them with very similar sequences  
 ```pre.cluster(fasta=current, count=current, diffs=2)
 ```   
 
-# Search for chimeras and remove them
+12. Search for chimeras and remove them
 ```chimera.uchime(fasta=current, count=current, dereplicate=t)
 remove.seqs(fasta=current, accnos=current)
 summary.seqs(count=current)
 ```  
 
-# Classify sequences with a bayesian classifier using the silva database
+13. Classify sequences with a bayesian classifier using the silva database
 ```classify.seqs(fasta=current, count=current, reference=silva.nr_v123.align, taxonomy=silv$
 ```  
 
-# Remove things which are classified as Chloroplast, Mitochondria, unknown, or Eukaryota
+14. Remove things which are classified as Chloroplast, Mitochondria, unknown, or Eukaryota
 ```remove.lineage(fasta=current, count=current, taxonomy=current, taxon=Chloroplast-Mitochondria-unknown-Eukaryota)
 summary.seqs(count=current)
 ```  
 
-# Remove groups such as mock communities that you won't use for further analysis
+15. Remove groups such as mock communities that you won't use for further analysis
 ```remove.groups(count=current, fasta=current, taxonomy=current, groups=Mock1-Mock2)
 summary.seqs(count=current)
 ```  
 
-# Cluster sequences into OTUs. To save memory/time we first split sequences by taxlevel 4 (order) then cluster from there. Read mothur wiki for more info.
+16. Cluster sequences into OTUs. To save memory/time we first split sequences by taxlevel 4 (order) then cluster from there. Read mothur wiki for more info.
 ```cluster.split(fasta=current, count=current, taxonomy=current, splitmethod=classify, taxlevel=4, cutoff=0.15)
 ```  
 
-# Determine how many sequences are in each OTU, using a .03 similarity cutoff
+17. Determine how many sequences are in each OTU, using a .03 similarity cutoff
 ```make.shared(list=current, count=current, label=0.03)
 ```  
 
-# Generate a consensus taxonomy for each OTU
+18. Generate a consensus taxonomy for each OTU
 ```summary.seqs(count=current)
 ```  
 
-# Classify sequences with a bayesian classifier using the silva database
+19. Classify sequences with a bayesian classifier using the silva database
 ```classify.seqs(fasta=current, count=current, reference=silva.nr_v123.align, taxonomy=silva.nr_v123.tax, cutoff=60)
 ```  
 
-# Remove things which are classified as Chloroplast, Mitochondria, unknown, or Eukaryota
+20. Remove things which are classified as Chloroplast, Mitochondria, unknown, or Eukaryota
 ```remove.lineage(fasta=current, count=current, taxonomy=current, taxon=Chloroplast-Mitochondria-unknown-Eukaryota)
 summary.seqs(count=current)
 ```  
 
-# Remove groups such as mock communities that you won't use for further analysis
+21. Remove groups such as mock communities that you won't use for further analysis
 ```remove.groups(count=current, fasta=current, taxonomy=current, groups=Mock1-Mock2)
 summary.seqs(count=current)
 ```  
 
-# Cluster sequences into OTUs. To save memory/time we first split sequences by taxlevel 4 (order) and then cluster from there. Read mothur wiki for more info
+22. Cluster sequences into OTUs. To save memory/time we first split sequences by taxlevel 4 (order) and then cluster from there. Read mothur wiki for more info
 ```cluster.split(fasta=current, count=current, taxonomy=current, splitmethod=classify, taxlevel=4, cutoff=0.15)
 ```  
 
-# Determine how many sequences are in each OTU, using a .03 similarity cutoff
+23. Determine how many sequences are in each OTU, using a .03 similarity cutoff
 ```make.shared(list=current, count=current, label=0.03)
 ```  
 
-# Generate a consensus taxonomy for each OTU
+24. Generate a consensus taxonomy for each OTU
 ```classify.otu(list=current, count=current, taxonomy=current, label=0.03)
 ```  
 
 
-5. to access and edit PBS script ```mothur.pbs```  
+# 5. to access and edit PBS script ```mothur.pbs```  
       in ```/scratch/duhaimem_fluxm/kbenedek/tara/mothur``` type ```nano mothur.pbs```  
 
 Contents of ```mothur.pbs``` script:
