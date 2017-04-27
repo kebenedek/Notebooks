@@ -1,0 +1,7 @@
+1. log in to flux
+'''ssh -l kbenedek flux-login.arc-ts.umich.edu'''  
+
+2. access duhaime lab flux space
+'''cd /scratch/duhaimem_fluxm/'''  
+
+3. 
