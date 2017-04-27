@@ -33,8 +33,7 @@ set.dir(tempdefault=/scratch/duhaimem_fluxm/duhaimem/Database/ssu_rRNA/Mothur)
 ```   
 
 4. Set processors based on the number of samples you have and whether you're using flux or fluxm
-```make.contigs(file=stability.file, processors=30, summary.seqs(fasta=current)
-```
+```make.contigs(file=stability.file, processors=30, summary.seqs(fasta=current)```
 
 5. Remove sequences with ambiguous bases and sequences that are not between 240-275 bp
 ```screen.seqs(fasta=current, group=current, summary=current, maxambig=0, maxlength=275, minlength=240, maxhomop=8)
