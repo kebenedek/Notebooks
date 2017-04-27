@@ -68,8 +68,7 @@ summary.seqs(count=current)
 ```  
 
 13. Classify sequences with a bayesian classifier using the silva database
-```classify.seqs(fasta=current, count=current, reference=silva.nr_v123.align, taxonomy=silv$
-```  
+```classify.seqs(fasta=current, count=current, reference=silva.nr_v123.align, taxonomy=silva.nr_v123.tax, cutoff=60)```  
 
 14. Remove things which are classified as Chloroplast, Mitochondria, unknown, or Eukaryota
 ```remove.lineage(fasta=current, count=current, taxonomy=current, taxon=Chloroplast-Mitochondria-unknown-Eukaryota)
@@ -82,42 +81,13 @@ summary.seqs(count=current)
 ```  
 
 16. Cluster sequences into OTUs. To save memory/time we first split sequences by taxlevel 4 (order) then cluster from there. Read mothur wiki for more info.
-```cluster.split(fasta=current, count=current, taxonomy=current, splitmethod=classify, taxlevel=4, cutoff=0.15)
-```  
+```cluster.split(fasta=current, count=current, taxonomy=current, splitmethod=classify, taxlevel=4, cutoff=0.15)```  
 
 17. Determine how many sequences are in each OTU, using a .03 similarity cutoff
-```make.shared(list=current, count=current, label=0.03)
-```  
+```make.shared(list=current, count=current, label=0.03)```  
 
 18. Generate a consensus taxonomy for each OTU
-```summary.seqs(count=current)
-```  
-
-19. Classify sequences with a bayesian classifier using the silva database
-```classify.seqs(fasta=current, count=current, reference=silva.nr_v123.align, taxonomy=silva.nr_v123.tax, cutoff=60)
-```  
-
-20. Remove things which are classified as Chloroplast, Mitochondria, unknown, or Eukaryota
-```remove.lineage(fasta=current, count=current, taxonomy=current, taxon=Chloroplast-Mitochondria-unknown-Eukaryota)
-summary.seqs(count=current)
-```  
-
-21. Remove groups such as mock communities that you won't use for further analysis
-```remove.groups(count=current, fasta=current, taxonomy=current, groups=Mock1-Mock2)
-summary.seqs(count=current)
-```  
-
-22. Cluster sequences into OTUs. To save memory/time we first split sequences by taxlevel 4 (order) and then cluster from there. Read mothur wiki for more info
-```cluster.split(fasta=current, count=current, taxonomy=current, splitmethod=classify, taxlevel=4, cutoff=0.15)
-```  
-
-23. Determine how many sequences are in each OTU, using a .03 similarity cutoff
-```make.shared(list=current, count=current, label=0.03)
-```  
-
-24. Generate a consensus taxonomy for each OTU
-```classify.otu(list=current, count=current, taxonomy=current, label=0.03)
-```  
+```classify.otu(list=current, count=current, taxonomy=current, label=0.03)```  
 
 
 # 5. to access and edit PBS script ```mothur.pbs```  
