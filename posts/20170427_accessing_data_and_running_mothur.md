@@ -8,7 +8,8 @@ ssh -l kbenedek flux-login.arc-ts.umich.edu
 ```  
 
 # 2. log in to Duhaime lab's high memory nodes on flux: 
-```cd /scratch/duhaimem_fluxm/
+```
+cd /scratch/duhaimem_fluxm/
 ```  
 
 # 3.  to access a zipped copy of the data: 
