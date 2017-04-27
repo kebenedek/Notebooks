@@ -59,8 +59,7 @@ unique.seqs(fasta=current, count=current)
 
 10. Precluster sequences allowing for up to 2 differences between sequences.
 11. The goal of this step is to eliminate sequences with errors due to sequencing technology by merging them with very similar sequences  
-```pre.cluster(fasta=current, count=current, diffs=2)
-```   
+```pre.cluster(fasta=current, count=current, diffs=2)```   
 
 12. Search for chimeras and remove them
 ```chimera.uchime(fasta=current, count=current, dereplicate=t)
